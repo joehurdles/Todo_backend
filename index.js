@@ -47,7 +47,7 @@ app.post('/todo', async (req, res)=>{
 app.get('/todo', async (req, res)=>{
     const {status} = req.params
     console.log('New todo created',status);
-    const todoModel = await TodoModel.find({status:status});
+    const todoModel = await TodoModel.find({});
     if(todoModel){
         return res.status(201).json({
             status:true,
